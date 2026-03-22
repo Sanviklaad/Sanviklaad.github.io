@@ -1,22 +1,39 @@
 import { useEffect, useState } from "react"
-import axios from "axios"
-import RepoCard from "../components/RepoCard"
+import { fetchRepos } from "../services/api"
+import LanguageChart from "../components/LanguageChart"
+import ActivityChart from "../components/ActivityChart"
+import Tech3D from "../components/Tech3D"
+import Navbar from "../components/Navbar"
 
 export default function Home() {
   const [repos, setRepos] = useState([])
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/repos")
-      .then(res => setRepos(res.data))
+    fetchRepos().then(res => setRepos(res.data))
   }, [])
 
   return (
-    <div>
-      <h1>Developer Dashboard</h1>
+    <div style={{ background:"#0a0a0a", color:"white", minHeight:"100vh" }}>
 
-      {repos.slice(0,6).map(repo => (
-        <RepoCard key={repo.id} repo={repo} />
-      ))}
+      <Navbar />
+
+      <div style={{ padding:"40px" }}>
+
+        <h1>Sanvik Laad</h1>
+        <p>Backend Engineer | Distributed Systems</p>
+
+        <h2>Engineering Insights</h2>
+
+        <h3>Language Distribution</h3>
+        <LanguageChart repos={repos} />
+
+        <h3>Repo Activity</h3>
+        <ActivityChart repos={repos} />
+
+        <h3>System Visualization</h3>
+        <Tech3D />
+
+      </div>
     </div>
   )
 }
