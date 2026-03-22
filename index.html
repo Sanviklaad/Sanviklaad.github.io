@@ -2,51 +2,58 @@
 <html>
 <head>
   <title>Sanvik Laad | Backend Engineer</title>
-  <meta name="description" content="Backend Engineer - Java, Spring Boot, Kafka">
+  <meta name="description" content="Backend Engineer - Distributed Systems">
 
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Courier New', monospace;
       background: #0a0a0a;
-      color: white;
-      line-height: 1.6;
+      color: #e5e5e5;
     }
 
     .container {
       max-width: 900px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 60px 20px;
     }
 
-    h1 { font-size: 42px; }
-    h2 { margin-top: 60px; }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      margin: 10px 10px 0 0;
-      background: #6366f1;
+    h1, h2 {
       color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
     }
 
-    .btn:hover {
-      opacity: 0.8;
-    }
-
-    .card {
+    .terminal {
       background: #111;
       padding: 20px;
       border-radius: 10px;
-      margin-top: 20px;
+      margin-bottom: 40px;
     }
 
-    .tech {
+    .green { color: #4ade80; }
+    .blue { color: #60a5fa; }
+
+    .card {
+      border-left: 3px solid #6366f1;
+      padding: 15px;
+      margin-top: 20px;
+      background: #111;
+    }
+
+    a {
       color: #6366f1;
-      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .small {
+      color: gray;
       font-size: 14px;
     }
   </style>
@@ -56,57 +63,99 @@
 
 <div class="container">
 
-  <h1>Sanvik Laad</h1>
-  <p><strong>Backend Engineer</strong></p>
+  <!-- TERMINAL HERO -->
+  <div class="terminal">
+    <p><span class="green">sanvik@backend:~$</span> whoami</p>
+    <p>Backend Engineer</p>
 
-  <p>
-    Java • Spring Boot • Kafka • Microservices
-  </p>
+    <p><span class="green">sanvik@backend:~$</span> tech-stack</p>
+    <p>Java • Spring Boot • Kafka • Distributed Systems</p>
 
-  <p>
-    Backend Engineer with 3+ years of experience building scalable APIs,
-    distributed systems, and high-performance backend services.
-  </p>
-
-  <a class="btn" href="https://github.com/Sanviklaad">GitHub</a>
-  <a class="btn" href="https://www.linkedin.com/in/sanvik-laad/">LinkedIn</a>
-
-  <h2>Skills</h2>
-  <p>
-    Java, Spring Boot, Quarkus, Kafka, MySQL, PostgreSQL, Docker, CI/CD, ArgoCD
-  </p>
-
-  <h2>Projects</h2>
-
-  <div class="card">
-    <h3>Order Processing System</h3>
+    <p><span class="green">sanvik@backend:~$</span> summary</p>
     <p>
-      Designed a Kafka-based microservice for asynchronous order handling.
+      Backend engineer with 3+ years of experience building scalable APIs,
+      event-driven systems, and performance-critical backend services.
     </p>
-    <div class="tech">Java • Spring Boot • Kafka • MySQL</div>
   </div>
 
-  <div class="card">
-    <h3>API Performance Optimization</h3>
-    <p>
-      Improved API performance and reduced latency through query optimization.
-    </p>
-    <div class="tech">Java • Spring Boot • MySQL</div>
+  <!-- LINKS -->
+  <p>
+    <a href="https://github.com/Sanviklaad">GitHub</a> |
+    <a href="https://www.linkedin.com/in/sanvik-laad/">LinkedIn</a>
+  </p>
+
+  <!-- ENGINEERING FOCUS -->
+  <div class="section">
+    <h2>Engineering Focus</h2>
+    <div class="card">
+      Designing scalable microservices using event-driven architecture
+    </div>
+    <div class="card">
+      Performance optimization and database tuning
+    </div>
+    <div class="card">
+      Building resilient distributed systems
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Rate Limiter</h3>
-    <p>
-      Implemented token bucket rate limiter to control traffic under high load.
-    </p>
-    <div class="tech">Java • Redis</div>
+  <!-- PROJECTS -->
+  <div class="section">
+    <h2>Projects (System Thinking)</h2>
+
+    <div class="card">
+      <h3>Order Processing System</h3>
+      <p>
+        Designed a Kafka-based event-driven system to process orders asynchronously.
+      </p>
+
+      <p class="small">
+        • Ensured idempotency and fault tolerance  
+        • Decoupled services using messaging  
+        • Improved system scalability  
+      </p>
+
+      <p class="blue">Java • Spring Boot • Kafka • MySQL</p>
+    </div>
+
+    <div class="card">
+      <h3>API Performance Optimization</h3>
+      <p>
+        Optimized backend APIs by improving database queries and indexing strategies.
+      </p>
+
+      <p class="small">
+        • Reduced latency  
+        • Improved throughput  
+        • Handled higher load efficiently  
+      </p>
+
+      <p class="blue">Java • Spring Boot • MySQL</p>
+    </div>
+
+    <div class="card">
+      <h3>Rate Limiter</h3>
+      <p>
+        Built a token bucket rate limiter to control API traffic under high load.
+      </p>
+
+      <p class="small">
+        • Prevented system overload  
+        • Ensured fair resource usage  
+      </p>
+
+      <p class="blue">Java • Redis</p>
+    </div>
+
   </div>
 
-  <h2>Contact</h2>
-  <p>Email: your-email@example.com</p>
+  <!-- CONTACT -->
+  <div class="section">
+    <h2>Contact</h2>
+    <p>Email: your-email@example.com</p>
+  </div>
 
-  <p style="margin-top:50px; font-size:14px; color:gray;">
-    Built and deployed using GitHub Pages
+  <p class="small" style="margin-top:60px;">
+    Built & deployed using GitHub Pages
   </p>
 
 </div>
