@@ -1,21 +1,17 @@
 from flask import Flask, jsonify
-import requests
 from flask_cors import CORS
+from services.github_service import get_repos
 
 app = Flask(__name__)
 CORS(app)
 
-USER = "Sanviklaad"
-
 @app.route("/api/repos")
 def repos():
-    url = f"https://api.github.com/users/{USER}/repos"
-    return jsonify(requests.get(url).json())
+    return jsonify(get_repos())
 
-@app.route("/api/repo/<name>")
-def repo(name):
-    url = f"https://api.github.com/repos/{USER}/{name}"
-    return jsonify(requests.get(url).json())
+@app.route("/api/health")
+def health():
+    return {"status": "ok"}
 
 if __name__ == "__main__":
     app.run(debug=True)
